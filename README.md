@@ -4,7 +4,7 @@
 
 # Filament Recurrence Input
 
-Reccurence input that allows create recurring events
+Recurrence input that allows create recurring events
 
 ## Installation
 

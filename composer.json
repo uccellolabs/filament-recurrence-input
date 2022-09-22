@@ -1,0 +1,33 @@
+{
+    "name": "uccellolabs/filament-recurrence-input",
+    "description": "Recurrence input for recurring events",
+    "type": "library",
+    "require": {
+        "php": "^8.0",
+        "filament/forms": "^2.9"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Uccellolabs\\FilamentRecurrenceInput\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jonathan SARDO",
+            "email": "jonathan@uccellolabs.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Uccellolabs\\FilamentRecurrenceInput\\FilamentRecurrenceInputProvider"
+            ]
+        }
+    },
+    "prefer-stable": true
+}

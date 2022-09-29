@@ -33,7 +33,7 @@ $affixLabelClasses = ['whitespace-nowrap group-focus-within:text-primary-500', '
                     dusk="filament.forms.{{ $getStatePath() }}" {!! $isAutofocused() ? 'autofocus' : null !!} {!! $isDisabled() ? 'disabled' : null !!}
                     id="{{ $getId() }}"
                     {{ $getExtraInputAttributeBag()->class([
-                        'block transition duration-75 rounded-lg shadow-sm focus:border-primary-500 focus:ring-1 focus:ring-inset focus:ring-primary-500 disabled:opacity-70',
+                        'block transition duration-75 rounded-lg shadow-sm focus:border-primary-500 focus:ring-1 focus:ring-inset focus:ring-primary-500 disabled:opacity-70 w-20',
                         'dark:bg-gray-700 dark:text-white dark:focus:border-primary-500' => config('forms.dark_mode'),
                     ]) }}
                     x-bind:class="{

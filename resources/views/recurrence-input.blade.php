@@ -1,5 +1,5 @@
 @php
-$affixLabelClasses = ['whitespace-nowrap group-focus-within:text-primary-500', 'text-gray-400' => !$errors->has($getStatePath()), 'text-danger-400' => $errors->has($getStatePath())];
+    $affixLabelClasses = ['whitespace-nowrap group-focus-within:text-primary-500', 'text-gray-400' => !$errors->has($getStatePath()), 'text-danger-400' => $errors->has($getStatePath())];
 @endphp
 
 <x-dynamic-component :component="$getFieldWrapperView()" :id="$getId()" :label="$getLabel()" :label-sr-only="$isLabelHidden()" :helper-text="$getHelperText()"
@@ -21,9 +21,14 @@ $affixLabelClasses = ['whitespace-nowrap group-focus-within:text-primary-500', '
         @endif
 
         @php
-            preg_match('`([0-9]+)([a-zA-Z]+)`', $getState, $matches);
-            $count = !empty($matches[1]) ? $matches[1] : '';
-            $frequency = !empty($matches[2]) ? $matches[2] : '';
+            if (!empty($getState && is_string($getState))) {
+                preg_match('`([0-9]+)([a-zA-Z]+)`', $getState, $matches);
+                $count = !empty($matches[1]) ? $matches[1] : '';
+                $frequency = !empty($matches[2]) ? $matches[2] : '';
+            } else {
+                $count = '';
+                $frequency = '';
+            }
         @endphp
 
         <div class="flex-1" x-data="{ count: '{{ $count }}', frequency: '{{ $frequency }}', value: @entangle($getStatePath()) }">
